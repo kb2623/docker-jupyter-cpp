@@ -29,7 +29,12 @@ RUN cd /root \
  && pip install -r requirements.txt
 
 # Add C++ kernel to jupyter
-# check for jupyter install https://github.com/root-project/cling/tree/master/tools/Jupyter
+RUN cd /opt/llvm/tools/cling/tools/Jupyter/kernel \
+ && pip install -e . \
+ && jupyter-kernelspec install cling-cpp17 \
+ && jupyter-kernelspec install cling-cpp1z \
+ && jupyter-kernelspec install cling-cpp14 \
+ && jupyter-kernelspec install cling-cpp11
 
 # Create user
 RUN useradd -m -d ${USER_HOME}/ -s /bin/bash ${USER}

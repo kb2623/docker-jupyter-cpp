@@ -1,5 +1,5 @@
 PORT:=8080
-D_IMGAE_NAME:=python-mathenv
+D_IMGAE_NAME:=jupyterlab-cling
 D_IMGAE_VERSION:=22022021
 SSL_KEY_NAME:=mykey
 NB_PASSWORD:=password1234
